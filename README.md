@@ -1,2 +1,2 @@
 # CucumberOnline3x_March24
-Java, Cucumber, TestNG, Maven, Github and Jenkins
+Java, Cucumber, TestNG, Maven, GitHub and Jenkins
