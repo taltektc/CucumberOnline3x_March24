@@ -9,6 +9,17 @@ Java, Cucumber, TestNG, Maven, GitHub and Jenkins
 - Maven
 - IDE: IntelliJ Community Edition
 
+# List of dependencies we need
+- selenium-java
+- cucumber-testng
+- cucumber-java
+- cucumber-testng
+- javafaker
+
+# Plugins in IntelliJ
+- Cucumber for Java
+- Gherkin
+
 # How to create a new framework from scratch 
 - Go to GitHub and create a new repo/project
 - Clone project into your local
