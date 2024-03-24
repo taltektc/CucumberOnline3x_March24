@@ -1,5 +1,5 @@
 # CucumberOnline3x_March24
-Java, Cucumber, TestNG, Maven, GitHub and Jenkins
+Java, Cucumber, Gherkin, TestNG, Maven, GitHub and Jenkins
 
 # TOOLS Required
 - GitHub account
@@ -9,12 +9,12 @@ Java, Cucumber, TestNG, Maven, GitHub and Jenkins
 - Maven
 - IDE: IntelliJ Community Edition
 
-# List of dependencies we need
+# List of dependencies we need from https://mvnrepository.com/ and (keep this inside pom.xml file)
 - selenium-java
 - cucumber-testng
 - cucumber-java
 - cucumber-testng
-- javafaker
+- javafaker (fake test data)
 
 # Plugins in IntelliJ
 - Cucumber for Java
@@ -23,4 +23,5 @@ Java, Cucumber, TestNG, Maven, GitHub and Jenkins
 # How to create a new framework from scratch 
 - Go to GitHub and create a new repo/project
 - Clone project into your local
-- Open IDE (IntelliJ)
+- Open IDE (IntelliJ) -- map it 
+- 
