@@ -4,10 +4,8 @@ import base.config;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-
 import java.time.Duration;
 
 public class homepage_steps extends config {
@@ -20,7 +18,6 @@ public class homepage_steps extends config {
         String expectTitle = "Login";
         String actTitle = driver.getTitle();
         Assert.assertEquals(actTitle, expectTitle);
-
     }
 
     @And("student clicks on Create New Account button")

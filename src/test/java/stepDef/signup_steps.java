@@ -1,8 +1,8 @@
 package stepDef;
 
 import base.config;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -11,19 +11,23 @@ import org.testng.Assert;
 
 
 public class signup_steps extends config {
+    Faker faker = new Faker();
     @And("student enter their first name")
     public void studentEnterTheirFirstName() {
-        driver.findElement(By.name("firstName")).sendKeys("Salman");
+        String randomFirstName = faker.name().firstName();
+        driver.findElement(By.name("firstName")).sendKeys(randomFirstName);
     }
 
     @And("student enter their last name")
     public void studentEnterTheirLastName() {
-        driver.findElement(By.name("lastName")).sendKeys("Khan");
+        String randomLastName = faker.name().lastName(); // Barton
+        driver.findElement(By.name("lastName")).sendKeys(randomLastName);
     }
 
     @And("student enter their email")
     public void studentEnterTheirEmail() {
-        driver.findElement(By.name("email")).sendKeys("salman.khan6@gmail.com");
+        String randomEmail = faker.internet().emailAddress();
+        driver.findElement(By.name("email")).sendKeys(randomEmail);
     }
 
     @And("student enter their password")
@@ -47,6 +51,26 @@ public class signup_steps extends config {
         // Year
         Select y = new Select (driver.findElement(By.name("year")));
         y.selectByVisibleText("1997");
+    }
+
+    @And("student enter their month as {string}, day as {string} and year as {string}")
+    public void studentEnterTheirMonthAsDayAsAndYearAs(String month, String day, String year) {
+        // Month
+        Select m = new Select (driver.findElement(By.name("month")));
+        m.selectByVisibleText(month);
+        // Day
+        Select d = new Select (driver.findElement(By.name("day")));
+        d.selectByVisibleText(day);
+        // Year
+        Select y = new Select (driver.findElement(By.name("year")));
+        y.selectByVisibleText(year);
+    }
+
+    @And("student validate if they can select different months as {string}")
+    public void studentValidateIfTheyCanSelectDifferentMonthsAs(String month) {
+        // Month
+        Select m = new Select (driver.findElement(By.name("month")));
+        m.selectByVisibleText(month);
     }
 
     @And("student enter their gender as male")
@@ -77,14 +101,21 @@ public class signup_steps extends config {
 
         String getMeOnlyStudentId = fullTextOfStudentId.substring(fullTextOfStudentId.indexOf(":") + 2);
         System.out.println("Student Random Id is === " + getMeOnlyStudentId);
+        // click on OK button from the popup
+        driver.findElement(By.xpath("//button[@class='swal-button swal-button--confirm']")).click();
     }
 
     @And("student enter their invalid email")
     public void studentEnterTheirInvalidEmail() {
+        driver.findElement(By.name("email")).sendKeys("fakeemail@g.");
 
     }
 
     @Then("student should get an error message about email is being incorrect")
     public void studentShouldGetAnErrorMessageAboutEmailIsBeingIncorrect() {
+        String expected = "Please enter a valid email address!";
+        String actual = driver.findElement(By.xpath("//*[@id='email-error']")).getText();
+        Assert.assertEquals(actual, expected);
     }
+
 }
