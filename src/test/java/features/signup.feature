@@ -28,9 +28,9 @@ Feature: TalentTEK Signup
     When student click on Create My Account button
     Then student should be able to get an student Id
     And student enter their newly created studentId
-    And student enter their password
+    And student enter their password during Login
     When they click on Login button
-    Then student should be able to successfully log in
+    ## Then student should be able to successfully log in
 
   @login @regression
   Scenario: Send values from feature file

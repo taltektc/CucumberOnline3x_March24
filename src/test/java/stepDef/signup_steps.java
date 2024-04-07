@@ -98,9 +98,12 @@ public class signup_steps extends config {
 
         String fullTextOfStudentId = driver.findElement(By.xpath("//div[@class='swal-text']")).getText();
         System.out.println("FULL TEXT is === " + fullTextOfStudentId);
+        // Your student id is: TTC0022222
 
-        String getMeOnlyStudentId = fullTextOfStudentId.substring(fullTextOfStudentId.indexOf(":") + 2);
-        System.out.println("Student Random Id is === " + getMeOnlyStudentId);
+        STUDENT_RANDOM_ID = fullTextOfStudentId.substring(fullTextOfStudentId.indexOf(":") + 2);
+        System.out.println("ONLY PRINT ==> Student Random Id  ===> " + STUDENT_RANDOM_ID);
+        // TTC0022222
+
         // click on OK button from the popup
         driver.findElement(By.xpath("//button[@class='swal-button swal-button--confirm']")).click();
     }
