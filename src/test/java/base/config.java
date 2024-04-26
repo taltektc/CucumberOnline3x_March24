@@ -10,6 +10,7 @@ import java.time.Duration;
 public class config {
     public static WebDriver driver;
     public static String STUDENT_RANDOM_ID;
+    public static String STUDENT_HARDCODED_EMAIL_ADDRESS;
 
     public static WebDriver setupBrowser (String browserType){
         if (browserType.equalsIgnoreCase("chrome")) {

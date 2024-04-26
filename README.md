@@ -24,4 +24,8 @@ Java, Cucumber, Gherkin, TestNG, Maven, GitHub and Jenkins
 - Go to GitHub and create a new repo/project
 - Clone project into your local
 - Open IDE (IntelliJ) -- map it 
-- 
+
+
+# How to run the test in CLI 
+- mvn verify -Denv=stage -Dbrowser=firefox
+- mvn verify -Denv=stage -Dbrowser=firefox -Dcucumber.filter.tags=@login
