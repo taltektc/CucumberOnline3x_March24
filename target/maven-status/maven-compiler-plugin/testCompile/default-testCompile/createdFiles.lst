@@ -1,1 +1,7 @@
+stepDef/Hook.class
+stepDef/homepage_steps.class
+stepDef/signup_steps.class
+base/config.class
+stepDef/Login_steps.class
 TestRunner.class
+prectice.class

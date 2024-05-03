@@ -15,7 +15,7 @@ public class config {
     public static WebDriver setupBrowser (String browserType){
         if (browserType.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
-        } else if (browserType.equalsIgnoreCase("firefox")) {
+        } else if (browserType.equalsIgnoreCase("ff")) {
             driver = new FirefoxDriver();
         } else if (browserType.equalsIgnoreCase("Safari")) {
             driver = new SafariDriver();

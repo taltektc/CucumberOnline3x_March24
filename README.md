@@ -28,4 +28,4 @@ Java, Cucumber, Gherkin, TestNG, Maven, GitHub and Jenkins
 
 # How to run the test in CLI 
 - mvn verify -Denv=stage -Dbrowser=firefox
-- mvn verify -Denv=stage -Dbrowser=firefox -Dcucumber.filter.tags=@login
+- mvn verify -Denv=qa -Dbrowser=chrome -Dcucumber.filter.tags=@hb

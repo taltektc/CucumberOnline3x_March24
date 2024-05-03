@@ -39,7 +39,6 @@ public class Login_steps extends config {
         // Requirements or design or business
         String exp = "Student Information";
         Assert.assertEquals(exp, act);
-
     }
 
     @And("student enter their invalid email address")
@@ -54,7 +53,16 @@ public class Login_steps extends config {
         String act = driver.findElement(By.xpath("//*[@id='error-msg']")).getText();
         // Requirements or design or business
         String exp = "Invalid email address";
-        Assert.assertEquals(exp, act);
+        Assert.assertEquals(act, exp);
         //*[@id="error-msg"]
+    }
+
+    @Then("student should be successfully login but failing on purpose")
+    public void studentShouldBeSuccessfullyLoginButFailingOnPurpose() {
+        // What developer has been implemented
+        String act = driver.findElement(By.xpath("//*[@id='wrap']/div/div/div[1]/h2")).getText();
+        // Requirements or design or business
+        String exp = "Student Information - Fail";
+        Assert.assertEquals(act, exp);
     }
 }

@@ -17,4 +17,11 @@ Feature: Login
     When they click on Login button
     Then student should not able to successfully login
 
+  @login @regression @smoke @fail
+  Scenario: Student should be able to login with valid credentials
+    And student enter their valid email address
+    And student enter their password during Login
+    When they click on Login button
+    Then student should be successfully login but failing on purpose
+
 
