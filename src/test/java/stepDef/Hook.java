@@ -41,5 +41,7 @@ public class Hook extends config {
             byte[] src = ts.getScreenshotAs(OutputType.BYTES);
             scenario.attach(src, "image/png", "screenshot");
         }
+        driver.close();
+        driver.quit();
     }
 }
